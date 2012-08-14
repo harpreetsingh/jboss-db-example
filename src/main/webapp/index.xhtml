@@ -23,34 +23,29 @@
                    box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.05);
          }
       </style>
-      <div style="well">   
-         <h1>Welcome to the Java EE 6 Clickstart</h1>
-         <p>You have successfully deployed a Java EE 6 web application
-            on Cloudbees running JBoss AS 7.</p>
+      
+ <!-- this is used for first time display of clickstart - a template-->
+  <div id="clickstart_content">
+     <p>
+      Congratulations, <a href="#CS_appManageUrl"><span>#CS_appName</span></a>, your <a href="#CS_docUrl"><span>#CS_name</span></a> application is now running.<br />
+      To modify it, take the following steps to clone the source repository:
+    </p>
 
-         <h2>To make changes to your application:</h2>
-            <p>
-               Make sure you have an ssh public key setup on <a href="https://grandcentral.cloudbees.com/user/ssh_keys">Cloudbees</a>
-            </p>
-            <p>
-               Next, clone the git repository: 
-            </p>   
-            <p>
-               <code>git clone ssh://git@git.cloudbees.com/<script>document.write(location.hostname.split(".")[1])</script>/<script>document.write(location.hostname.split(".")[0])</script>.git</code>
-            </p> 
-            <p>
-               Make your changes and then push to the git repo, for example
-            </p>
-            <p>
-               <code>git push origin master</code>
-            </p>   
-            <p>
-               This will trigger a build and deploy cycle on cloudbees - done !
-            </p>
-       </div>     
+    <div class="CB_codeSample">
+          git clone #CS_source #CS_appName<br/>
+          cd #CS_appName<br/>
+          ---- do your magic edits ----<br/>
+          git commit -m 'This is now even better !'<br/>
+          git push origin master
+    </div>
 
-
-
+    <p>Manage your application components at the following URLs:</p>
+    <ul>
+      <li><strong>Core application:</strong> <a href="#CS_appManageUrl">#CS_appManageUrl</a></li>
+      <li><strong>Database:</strong> <a href="#CS_appManageUrl">#CS_appManageUrl</a></li>
+      <li><strong>Jenkins Build System:</strong> <a href="#CS_appManageUrl">#CS_appManageUrl</a></li>
+    </ul>
+  </div>
 
       <h:form id="reg">
          <h2>Register (Bean Validation example)</h2>
